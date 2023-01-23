@@ -6,13 +6,14 @@ function Login() {
   const [email, setEmail] = useState("");
   const [confirmEmail, setConfirmEmail] = useState("");
   return (
-    <div>
+    <div className="loginForm">
       <form action="">
         <Input
           placeholder="full name"
           type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          size="lg"
+          value={fullname}
+          onChange={(e) => setFullname(e.target.value)}
         />
         <Input placeholder="email" />
         <Input placeholder="confirm-email" />

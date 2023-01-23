@@ -21,7 +21,7 @@ function Popup() {
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
-          <ModalBody>
+          <ModalBody w={10}>
             <Login />
           </ModalBody>
 
