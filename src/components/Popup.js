@@ -1,4 +1,5 @@
 import React from "react";
+import "../App.css";
 import {
   Modal,
   ModalOverlay,
@@ -11,17 +12,18 @@ import {
   Button,
 } from "@chakra-ui/react";
 import Login from "./Login";
+
 function Popup() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <Button onClick={onOpen}>Open Modal</Button>
-
-      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+      {/* Size can be sml lg xl etc etc 2xl 2lg 5lg etc */}
+      <Modal isOpen={isOpen} onClose={onClose} isCentered size={"full"}>
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
-          <ModalBody w={10}>
+          <ModalBody pb={6}>
             <Login />
           </ModalBody>
 
