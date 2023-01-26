@@ -12,7 +12,7 @@ function Login() {
         <Input
           placeholder="full name"
           type="text"
-          size="lg"
+          size="md"
           value={fullname}
           onChange={(e) => setFullname(e.target.value)}
         />
