@@ -24,7 +24,7 @@ function Popup() {
         isOpen={isOpen}
         onClose={onClose}
         isCentered
-        size={{ base: "full", sm: "md", md: "lg" }}
+        size={{ base: "full", sm: "sm" }}
       >
         <ModalOverlay />
         <ModalContent>
@@ -32,14 +32,18 @@ function Popup() {
             <ModalCloseButton />
           </ModalHeader>
 
-          <ModalBody>
-            <Center>
-              <Login />
-            </Center>
+          <ModalBody display="flex" alignItems="center" justifyContent="center">
+            <Login />
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="grey" mr={1} size="sm" onClick={onClose}>
+            <Button
+              colorScheme="grey"
+              mr={1}
+              justify-content="flex-end"
+              size="sm"
+              onClick={onClose}
+            >
               Close
             </Button>
           </ModalFooter>

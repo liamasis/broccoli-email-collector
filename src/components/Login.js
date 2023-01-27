@@ -1,5 +1,13 @@
 import React from "react";
-import { Input, Button, Center, ButtonGroup, Stack } from "@chakra-ui/react";
+import {
+  Input,
+  Button,
+  Center,
+  ButtonGroup,
+  Stack,
+  VStack,
+  Form,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import "../App.css";
 function Login() {
@@ -8,8 +16,13 @@ function Login() {
   const [confirmEmail, setConfirmEmail] = useState("");
   return (
     <div className="loginForm">
-      <form action="">
-        <Stack direction="column" spacing={4} align="center">
+      <form>
+        <VStack
+          direction="column"
+          spacing={4}
+          justifyContent="center"
+          alignItems="center"
+        >
           <Input
             placeholder="full name"
             type="text"
@@ -20,7 +33,7 @@ function Login() {
           <Input size="md" placeholder="email" />
           <Input size="md" placeholder="confirm-email" />
           <Button width={"full"}> Submit </Button>
-        </Stack>
+        </VStack>
       </form>
     </div>
   );
