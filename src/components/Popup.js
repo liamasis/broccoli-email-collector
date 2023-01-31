@@ -10,15 +10,14 @@ import {
   ModalCloseButton,
   useDisclosure,
   Button,
-  Center,
 } from "@chakra-ui/react";
 import Login from "./Login";
 
-function Popup() {
+function Popup({ text }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button onClick={onOpen}>Open Modal</Button>
+      <Button onClick={onOpen}>{text}</Button>
       {/* Size can be sml lg xl etc etc 2xl 2lg 5lg etc */}
       <Modal
         isOpen={isOpen}
