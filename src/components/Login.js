@@ -14,6 +14,7 @@ function Login() {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [confirmEmail, setConfirmEmail] = useState("");
+  const [error, setError] = useState(false);
   return (
     <div className="loginForm">
       <form>
@@ -23,6 +24,9 @@ function Login() {
           justifyContent="center"
           alignItems="center"
         >
+          <h1 style={{ fontSize: "20px", padding: "3px" }}>
+            Please enter your details:
+          </h1>
           <Input
             placeholder="full name"
             type="text"
@@ -32,6 +36,9 @@ function Login() {
           />
           <Input size="md" placeholder="email" />
           <Input size="md" placeholder="confirm-email" />
+          <span style={{ visibility: error ? "visible" : "hidden" }}>
+            These is an error
+          </span>
           <Button width={"full"}> Submit </Button>
         </VStack>
       </form>
