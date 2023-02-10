@@ -1,5 +1,6 @@
 import { VStack, Heading } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import "./App.css";
 import Popup from "./components/Popup";
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <p>Be the first to find out when we launch.</p>
 
         <Popup text="Enter details to find out" />
+        <Footer />
       </VStack>
     </div>
   );
