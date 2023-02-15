@@ -1,8 +1,8 @@
 import { VStack, Heading } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 import "./App.css";
-import Popup from "./components/Popup";
+import Popup from "./components/Popup/Popup";
 function App() {
   return (
     <div className="App">
