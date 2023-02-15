@@ -11,7 +11,7 @@ import {
   useDisclosure,
   Button,
 } from "@chakra-ui/react";
-import Login from "./Login";
+import Login from "../Login";
 
 function Popup({ text }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
