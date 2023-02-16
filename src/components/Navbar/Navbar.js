@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../App.css";
+import styles from "./Navbar.scss";
 function Navbar() {
   return <div className="navBar">Header | </div>;
 }
