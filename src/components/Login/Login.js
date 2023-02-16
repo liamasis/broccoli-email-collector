@@ -9,7 +9,7 @@ import {
   Form,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import "../App.css";
+import "./Login.scss";
 function Login() {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
