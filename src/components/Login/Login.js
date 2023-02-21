@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import {
   Input,
   Button,
@@ -15,6 +16,23 @@ function Login() {
   const [email, setEmail] = useState("");
   const [confirmEmail, setConfirmEmail] = useState("");
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const [sentEmail, setSentEmail] = useState(null);
+  const handleClick = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    console.log("clicked");
+    try {
+      const { data } = await axios.get(
+        "https://us-central1-blinkapp-684c1.cloudfunctions.net/fakeAuth"
+      );
+      setSentEmail(data);
+    } catch {
+      setError(true);
+    }
+    setLoading(false);
+  };
 
   return (
     <div className="loginForm">
@@ -35,12 +53,29 @@ function Login() {
             value={fullname}
             onChange={(e) => setFullname(e.target.value)}
           />
-          <Input size="md" placeholder="email" />
-          <Input size="md" placeholder="confirm-email" />
+          <Input
+            size="md"
+            placeholder="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            size="md"
+            placeholder="confirm-email"
+            value={confirmEmail}
+            onChange={(e) => setConfirmEmail(e.target.value)}
+          />
           <span style={{ visibility: error ? "visible" : "hidden" }}>
             Email is not valid.
           </span>
-          <Button width={"full"}> Submit </Button>
+
+          <Button
+            isDisabled={!fullname || !email || !confirmEmail}
+            width={"full"}
+            onClick={handleClick}
+          >
+            {loading ? "Loading" : "Submit"}
+          </Button>
         </VStack>
       </form>
     </div>
