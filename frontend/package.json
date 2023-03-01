@@ -1,7 +1,8 @@
 {
-  "name": "broccoli-email-collector",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^2.4.9",
@@ -23,10 +24,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "server": "nodemon backend/server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "client": "npm start frontend",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
