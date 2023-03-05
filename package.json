@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "start": "node backend/server.js",
     "server": "npm nodemon backend/server.js",
     "client": "npm start --prefix frontend"
   },
