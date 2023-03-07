@@ -30,7 +30,15 @@ const setEmails = asyncHandler(async (req, res) => {
 // @route   PUT /api/Emails
 // @access  Private
 const updateEmails = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: `Update email ${req.params.id}` });
+  const email = await Email.findById(req.params.id);
+
+  if (!email) {
+    res.status(400);
+    throw new Error('Email not found');
+  }
+
+  const updatedEmail = await Email.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  res.status(200).json({ message: `Updated email ${updatedEmail}` });
 });
 // @desc    Delete Emails
 // @route   DELETE /api/Emails
