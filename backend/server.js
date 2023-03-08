@@ -9,7 +9,7 @@ const app = express();
 connectDB();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+// Why
 app.use("/api/Emails", require("./routes/emailRoutes"));
 
 app.use(errorHandler);
