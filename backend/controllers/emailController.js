@@ -34,17 +34,28 @@ const updateEmails = asyncHandler(async (req, res) => {
 
   if (!email) {
     res.status(400);
-    throw new Error('Email not found');
+    throw new Error("Email not found");
   }
 
-  const updatedEmail = await Email.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  res.status(200).json({ message: `Updated email ${updatedEmail}` });
+  const updatedEmail = await Email.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  });
+  res.status(200).json(updatedEmail);
 });
 // @desc    Delete Emails
 // @route   DELETE /api/Emails
 // @access  Private
 const deleteEmails = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: `Delete email ${req.params.id}` });
+  const email = await Email.findById(req.params.id);
+
+  if (!email) {
+    res.status(400);
+    throw new Error("Email not found");
+  }
+  const deletedEmail = await Email.findByIdAndDelete(req.params.id, req.body, {
+    new: true,
+  });
+  res.status(200).json({ message: `Delete email ${deletedEmail}` });
 });
 
 module.exports = {
