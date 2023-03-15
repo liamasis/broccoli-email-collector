@@ -58,6 +58,8 @@ const deleteEmails = asyncHandler(async (req, res) => {
   res.status(200).json({ message: `Delete email ${deletedEmail}` });
 });
 
+// Check if EMAIL exists in the list.
+
 module.exports = {
   getEmails,
   setEmails,
