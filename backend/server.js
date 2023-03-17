@@ -11,6 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // Why
 app.use("/api/Emails", require("./routes/emailRoutes"));
+//Set up api error
 
 app.use(errorHandler);
 
