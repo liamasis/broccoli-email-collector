@@ -4,11 +4,11 @@ const emailScheme = mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Please add a text value"],
+      required: [true, "Please add a name value"],
     },
     address: {
       type: String,
-      required: [true, "Please add a text value"],
+      required: [true, "Please add a email value"],
     },
   },
   {
