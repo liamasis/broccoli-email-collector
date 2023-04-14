@@ -15,10 +15,10 @@ const getEmails = asyncHandler(async (req, res) => {
 // @route   POST /api/Emails
 // @access  Private
 const setEmails = asyncHandler(async (req, res) => {
-  if (!req.body.name) {
+  if (!req.body.email) {
     res.status(400);
     console.log(req.body.name);
-    throw new Error("Please add a text file");
+    throw new Error("Please add a email");
   }
   const email = await Email.create({
     name: req.body.name,
@@ -57,6 +57,8 @@ const deleteEmails = asyncHandler(async (req, res) => {
   });
   res.status(200).json({ message: `Delete email ${deletedEmail}` });
 });
+
+// Check if EMAIL exists in the list.
 
 module.exports = {
   getEmails,
