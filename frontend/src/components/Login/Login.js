@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import qs from 'qs';
 
 import {
   Input,
@@ -30,24 +29,11 @@ function Login() {
       name: fullname,
       address: email
     };
-    console.log(fullname);
-    console.log(email);
 
-    const options = {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: qs.stringify(newContact),
-    };
-
-    console.log(options);
     try {
       const { data } = await axios.post(
         "http://localhost:5000/api/emails", newContact
       ).then(
-
         res => {
           console.log('and then...');
           switch (res.status) {
@@ -62,13 +48,10 @@ function Login() {
           }
         }
       );
-      console.log('Set sent email');
       setSentEmail(data);
     } catch {
-      console.log('Error, huge if true');
       setError(true);
     }
-    console.log('Forever loading');
     setLoading(false);
   };
 
