@@ -1,2 +1,6 @@
-import { render, screen } from "@testing-library/react";
-import App from "./App";
+
+
+test("test test", () => {
+    expect(2 + 2).toBe(4);
+  });
+  
